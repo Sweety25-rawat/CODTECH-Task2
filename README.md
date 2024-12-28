@@ -1,71 +1,91 @@
 # CODTECH-Task2
-# Predictive Modeling with Linear Regression
+# Linear Regression on Auto MPG Dataset
 
-## Project Description
-This project focuses on implementing a **simple linear regression model** using the **Auto-MPG dataset**. The objective is to predict the fuel efficiency (MPG) of cars based on the `horsepower` feature. The task involves data preprocessing, building a predictive model, evaluating its performance, and visualizing the results.
+## Project Overview
 
-## Dataset
-- **Name**: Auto-MPG Dataset
-- **Source**: This dataset was used in the 1983 American Statistical Association Exposition.
-- **Description**: The dataset contains information about cars, including features like `mpg`, `horsepower`, `weight`, and more.
-- **Target Variable**: `mpg` (miles per gallon)
-- **Feature**: `horsepower` (used for this task)
+This project demonstrates the implementation of a simple Linear Regression model using Python to predict the Miles Per Gallon (MPG) of cars based on their horsepower. The dataset used in this project is the **Auto MPG dataset**, which is a popular dataset for regression analysis in the field of machine learning.
 
-## Project Steps
-1. **Data Preprocessing**:
-   - Handle missing values in the dataset.
-   - Convert relevant columns to numeric types.
-2. **Model Implementation**:
-   - Split the data into training (80%) and testing (20%) sets.
-   - Train a **Linear Regression** model on the training set.
-3. **Model Evaluation**:
-   - Evaluate performance using **Mean Squared Error (MSE)** and **R-squared (R²)**.
-4. **Visualization**:
-   - Plot the regression line on training data.
-   - Visualize actual vs. predicted values for the test set.
+## Dataset Information
 
-## How to Run the Code
+The dataset, `auto-mpg.csv`, contains information about various car models, including attributes such as:
 
-1. **Clone the Repository**:
-   ```bash
-   git clone <repository_url>
-   cd <repository_folder>
-   ```
+- MPG (Miles per Gallon) - Target variable
+- Horsepower - Used as the feature for this project
+- Other attributes (not used in this project) include cylinders, displacement, weight, acceleration, and model year.
 
-2. **Install Dependencies**:
-   Ensure you have Python installed. Then, install the required libraries:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## Data Preprocessing
 
-3. **Run the Script**:
-   Execute the Python script to train the model and visualize the results:
-   ```bash
-   python predictive_modeling.py
-   ```
+1. **Handling Missing Values**:
+   - Missing values in the dataset are represented by `?`. These are replaced with `NaN` and subsequently removed.
+2. **Data Type Conversion**:
+   - The `horsepower` column is converted from string to float for numerical computations.
+3. **Feature and Target Selection**:
+   - Feature: `horsepower`
+   - Target: `mpg`
 
-## Dependencies
-The following Python libraries are required:
-- `pandas`
-- `numpy`
-- `matplotlib`
-- `sklearn`
+## Workflow
+
+1. **Data Loading**:
+   - The dataset is loaded from a CSV file into a Pandas DataFrame.
+2. **Data Preprocessing**:
+   - Missing values are handled, and necessary type conversions are performed.
+3. **Exploratory Data Analysis (EDA)**:
+   - Distribution of the target variable (`mpg`) is analyzed.
+   - Correlation between `horsepower` and `mpg` is explored.
+4. **Train-Test Split**:
+   - The data is split into training (80%) and testing (20%) sets.
+5. **Model Training**:
+   - A Linear Regression model is trained using the `horsepower` feature to predict the `mpg` target.
+6. **Model Evaluation**:
+   - The model's performance is evaluated using Mean Squared Error (MSE) and R-squared (R2) score.
+7. **Visualization**:
+   - Training data regression line and actual vs. predicted values for test data are plotted.
+
+## Tools & Libraries
+
+- **pandas**: For data manipulation and preprocessing.
+- **numpy**: For numerical computations.
+- **matplotlib**: For data visualization.
+- **sklearn** (scikit-learn): For model building, training, and evaluation.
+
+## Model Performance
+
+The model's performance metrics include:
+
+- **Mean Squared Error (MSE)**: A measure of the average squared difference between actual and predicted values.
+- **R-squared (R2)**: A measure of how well the model explains the variance in the target variable.
+
+## Visualizations
+
+### Training Data
+
+- A scatter plot showing the relationship between horsepower and MPG, along with the regression line.
+
+### Testing Data
+
+- A plot comparing actual MPG values to predicted MPG values to assess model accuracy.
+
+## File Structure
+
+- `auto-mpg.csv`: Dataset file
+- `linear_regression.py`: Python script containing the code
 
 ## Results
-1. **Evaluation Metrics**:
-   - Mean Squared Error (MSE): Evaluates the average squared difference between actual and predicted values.
-   - R-squared (R²): Explains the proportion of variance in the target variable explained by the model.
-2. **Visualizations**:
-   - Regression Line: Displays the model's fit on training data.
-   - Actual vs. Predicted: Shows the accuracy of predictions on the test set.
 
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+- The model successfully captures the inverse relationship between horsepower and MPG, showing a negative slope in the regression line.
+- The R-squared value indicates how much variance in MPG is explained by horsepower alone.
 
-## Acknowledgments
-The dataset used in this project was originally published as part of the 1983 American Statistical Association Exposition.
+## Conclusion
+
+This project showcases the application of Linear Regression to predict car fuel efficiency using a single feature, `horsepower`. The approach is effective but limited by the use of only one predictor. While the model performs reasonably well, incorporating additional features could enhance accuracy.
+
+## Future Work
+
+- **Incorporate additional features**: Include variables like weight, acceleration, and displacement for better predictions.
+- **Handle missing values effectively**: Use imputation techniques instead of dropping rows.
+- **Experiment with advanced regression models**: Explore polynomial regression, decision trees, or neural networks.
 
 ---
 
-Feel free to raise an issue or contribute to this repository!
+Thank you for checking out the project!
 
